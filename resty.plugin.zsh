@@ -11,8 +11,6 @@
 
 ## Zsh Antigen installer for resty.
 
-source "$(dirname $0:A)/resty"
-alias pp="$(cat $(dirname $0:A)/pp)"
-alias pypp="$(cat $(dirname $0:A)/pypp)"
+source "$(dirname $0:A)/resty.sh"
 
 # source file, and create alias with the content of pp, ppyp
