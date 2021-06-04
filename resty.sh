@@ -173,8 +173,13 @@ HELP
 	[ "${#_RESTY_OPTS[@]}" -ne 0 ] && all_opts+=($(echo ${_RESTY_OPTS} | tr " " "\n"))
 
 	for opt in "${all_opts[@]}"; do
-		if [ -n "$maybe_query" ] && [ -z "$query" ]; then
-			query="?$opt"
+		if [ -n "$maybe_query" ]; then
+			if [ -z "$query"]; then
+				query="?$opt"
+			else
+				query="$query&$opt"
+			fi
+			maybe_query=""
 			continue
 		fi
 
